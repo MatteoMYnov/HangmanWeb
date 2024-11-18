@@ -39,10 +39,6 @@ func commencerHandler(w http.ResponseWriter, r *http.Request) {
 	tmpl.Execute(w, nil)
 }
 
-func init() {
-	panic("unimplemented")
-}
-
 func main() {
 	// Rediriger la racine vers /menu
 	http.HandleFunc("/", rootHandler)
@@ -62,5 +58,5 @@ func main() {
 	http.HandleFunc("/commencer", commencerHandler)
 
 	// Lancer le serveur
-	http.ListenAndServe(":1231", nil)
+	http.ListenAndServe(":1551", nil)
 }
