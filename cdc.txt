@@ -1,0 +1,6 @@
+Main menu for play
+Rules
+words theme
+difficulty
+Multiplayer or not 
+Profile

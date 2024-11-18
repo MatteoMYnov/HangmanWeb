@@ -1,0 +1,107 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(90deg, rgb(4, 5, 26) 0%, rgb(0, 0, 0) 100%);
+    color: #FFF;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    color: rgb(0, 171, 245);
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: auto;
+}
+
+.logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.profile-name {
+    margin-left: auto;
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(0, 171, 245);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+main {
+    flex: 1;
+    text-align: center;
+    padding: 20px;
+}
+
+body::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 12.5%;
+    background: linear-gradient(to top, rgba(7, 39, 51, 1) 0%, rgba(0, 0, 0, 0) 100%);
+    pointer-events: none;
+}
+
+.game-container {
+    position: relative;
+    display: inline-block;
+    padding: 20px;
+}
+
+.text-box {
+    background-color: rgba(7, 39, 51, 0.2);
+    border: 2px solid rgb(11, 62, 84);
+    padding: 10px;
+    width: 300px;
+    height: auto;
+    max-height: none;
+    overflow: hidden;
+    white-space: pre-wrap;
+    position: absolute;
+    left: -100%; /* Boîte collée à gauche */
+    top: 30%; /* Ajustez cette valeur si vous souhaitez un autre placement vertical */
+    transform: none; /* Enlève le centrage horizontal */
+    user-select: text;
+    pointer-events: none;
+    border-radius: 15px;
+    color: rgb(0, 171, 245);
+    text-shadow: 0 0 0 rgba(0, 171, 245, 1);
+    text-align: left;
+    font-size: calc(1rem + 1vw);
+    line-height: 1;
+    box-sizing: border-box;
+}
+
+.input-box {
+    margin-top: 190px; /* Augmente cette valeur de 50px par rapport à la valeur actuelle */
+    padding: 10px;
+    width: 300px;
+    font-size: 1.2rem;
+    text-align: center;
+    border: 2px solid rgb(11, 62, 84);
+    border-radius: 10px;
+    background-color: rgba(7, 39, 51, 0.2);
+    color: rgb(0, 171, 245);
+    outline: none;
+    transition: background-color 0.3s ease;
+}
+
+.input-box:focus {
+    background-color: rgba(0, 171, 245, 0.1);
+}

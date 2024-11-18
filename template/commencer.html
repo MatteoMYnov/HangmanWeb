@@ -1,0 +1,38 @@
+<!DOCTYPE html> 
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman Web</title>
+    <link rel="stylesheet" href="../styles/commencer.css"> <!-- Lien vers le fichier CSS -->
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <img src="../img/logo.png" alt="Logo"> <!-- Remplacez par le chemin de votre logo -->
+            <span>HangmanWeb</span>
+        </div>
+        <div class="profile-name" id="profileName"></div> <!-- Éléments pour le nom du profil -->
+    </nav>
+
+    <main>
+        <div class="game-container">
+            <div class="text-box" tabindex="0">
+                ==========Y=<br> ||/       |<br> ||       O<br> ||       /|\<br> ||       / \<br>/|| <br>============<br><br>Test
+            </div>
+            <input type="text" id="userInput" class="input-box" placeholder="Entrez une lettre ou un mot">
+        </div>
+    </main>
+
+    <script>
+        // Récupérer le nom du stockage local et l'afficher dans la barre de navigation
+        const name = localStorage.getItem('profileName');
+        if (name) {
+            const truncatedName = name.length > 8 ? name.slice(0, 8) : name; // Tronquer à 8 caractères si nécessaire
+            document.getElementById('profileName').innerText = truncatedName; // Afficher le nom du profil
+        }
+    </script>
+
+</body>
+</html>

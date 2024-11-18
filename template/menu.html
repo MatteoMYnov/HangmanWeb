@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Principale HangmanWeb</title>
+    <link rel="stylesheet" href="../styles/menu.css"> <!-- Lien vers le fichier CSS -->
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <img src="../img/logo.png" alt="Logo">
+            <span>HangmanWeb</span>
+        </div>
+        <div class="nav-links">
+            <a href="#menu">Menu</a>
+            <a href="#regles">Règles</a>
+            <a href="#theme">Thème de mots</a>
+            <a href="#difficulte">Difficulté</a>
+            <a href="#options">Options</a>
+        </div>
+        <button class="logo-button" onclick="toggleSidebar()">
+            <img src="../img/profile.png" alt="Logo Bouton">
+        </button>
+    </nav>
+
+    <main>
+        <h1 class="fade-in" id="welcome">Bienvenue sur Hangman Web</h1>
+        <p class="fade-in" id="subtitle">Veuillez choisir vos préférences dans les paramètres avant de commencer.</p>
+        <a href="#" class="start-button" id="startButton">Commencer</a>
+    </main>
+
+    <div class="sidebar" id="sidebar">
+        <h2>Profile</h2>
+        <input type="text" id="profileName" placeholder="Entrez votre nom" />
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('active');
+        }
+
+        window.onload = function() {
+            // Sélectionner les éléments
+            const welcomeText = document.getElementById('welcome');
+            const subtitleText = document.getElementById('subtitle');
+
+            // Ajouter la classe "visible" pour démarrer l'animation
+            welcomeText.classList.add('visible');
+            subtitleText.classList.add('visible');
+        };
+
+        document.getElementById('startButton').onclick = function() {
+            const profileName = document.getElementById('profileName').value;
+            // Stocker le nom dans le stockage local
+            localStorage.setItem('profileName', profileName);
+            // Rediriger vers commencer
+            window.location.href = '/commencer';
+        };
+    </script>
+
+</body>
+</html>

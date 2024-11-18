@@ -1,0 +1,160 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(90deg, rgb(4, 5, 26) 0%, rgb(0, 0, 0) 100%);
+    color: #FFF;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+}
+.navbar {
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+.logo {
+    display: flex;
+    align-items: center;
+    color: rgb(0, 171, 245);
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: auto;
+}
+.logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+.nav-links {
+    display: flex;
+    gap: 15px;
+    flex-grow: 1;
+    justify-content: space-around;
+    padding-left: 100px;
+}
+.nav-links a {
+    position: relative;
+    color: rgb(198, 198, 198);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 10px 15px;
+    border-radius: 15px;
+    border: 2px solid rgb(11, 62, 84);
+    transition: background-color 0.3s, color 0.3s;
+}
+.nav-links a::before {
+    content: "";
+    position: absolute;
+    left: 15px;
+    right: 15px;
+    top: 70%;
+    height: 2px;
+    background-color: white;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+.nav-links a:hover {
+    color: white;
+    background-color: rgb(0, 171, 245);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+.nav-links a:hover::before {
+    transform: scaleX(1);
+}
+main {
+    flex: 1;
+    text-align: center;
+    padding: 20px;
+}
+.start-button {
+    display: inline-block;
+    margin-top: 200px;
+    padding: 25px 50px;
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    background-color: transparent;
+    border: 2px solid rgb(11, 62, 84);
+    border-radius: 15px;
+    transition: background-color 0.3s;
+    text-decoration: none;
+    text-align: center;
+}
+.start-button:hover {
+    background-color: rgb(0, 171, 245);
+}
+.logo-button {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 2px solid rgb(11, 62, 84);
+    border-radius: 15px;
+    background: none;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    z-index: 2000; /* Z-index élevé pour passer par-dessus la sidebar */
+}
+.logo-button img {
+    width: 80%;
+    height: auto;
+}
+.logo-button:hover {
+    color: white;
+    background-color: rgb(0, 171, 245);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 250px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #fff;
+    padding: 20px;
+    transition: right 0.3s ease; 
+    z-index: 1000; /* Z-index inférieur au bouton */
+    border-left: 5px solid rgb(11, 62, 84);
+}
+.sidebar.active {
+    right: 0;
+}
+.sidebar h2 {
+    margin: 0;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+.sidebar input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    background-color: rgb(11, 62, 84);
+    color: #fff;
+}
+body::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 12.5%;
+    background: linear-gradient(to top, rgba(7, 39, 51, 1) 0%, rgba(0, 0, 0, 0) 100%);
+    pointer-events: none;
+}
+.fade-in {
+    opacity: 0; /* Initialement caché */
+    transform: translateY(20px); /* Déplacer vers le bas */
+    transition: opacity 1s ease, transform 1s ease; /* Transition pour l'animation */
+}
+
+.fade-in.visible {
+    opacity: 1; /* Rendre visible */
+    transform: translateY(0); /* Revenir à la position d'origine */
+}
