@@ -1,7 +1,6 @@
 package main
 
 import (
-	"hangmanweb/hangman"
 	"html/template"
 	"net/http"
 )
@@ -30,7 +29,7 @@ func menuHandler(w http.ResponseWriter, r *http.Request) {
 
 func commencerHandler(w http.ResponseWriter, r *http.Request) {
 	// Mise à jour du chemin du fichier HTML pour commencer
-	go hangman.Init()
+	// go hangman.Init()
 	tmpl, err := template.ParseFiles("./template/commencer.html")
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
